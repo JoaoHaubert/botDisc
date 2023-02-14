@@ -37,17 +37,5 @@ client.login(TOKEN);
 //Listener para interacao#
 client.on(Events.InteractionCreate, async interaction => {
 	if(!interaction.isChatInputCommand()) return
-	const command = interaction.client.commands.get(interaction.commandName)
-
-	if (!command) {
-		console.error("Command does not exist!")
-		return
-	}
-
-	try {
-		await command.execute(interaction) 
-	}
-	catch(error) {
-		console.error(error)
-	}
+	console.log(interaction)
 })
